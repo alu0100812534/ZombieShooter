@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*Clase que representa el temporizador en el MAPA TERRENO */
 public class Timer2 : MonoBehaviour {
 
     public Text timerT;
@@ -35,7 +36,8 @@ public class Timer2 : MonoBehaviour {
                     //termina el nivel
                     winPal.SetActive(true); //cargamos pantalla de victoria
                 }
-
+                /* Si el tiempo es menor de 15 pero no ha terminado, parpadeamos el icono del temporizador,
+              * cambiamos el color a rojo e incrementamos el número de zombies que generamos */
                 else if (timeLeft < 15 && timeLeft > 0)
                 {
                     InvokeRepeating("FlashLabel", 0, 1.5f);
@@ -57,6 +59,7 @@ public class Timer2 : MonoBehaviour {
             }
         }
     }
+    //función que formatea el tiempo que le pasamos a un formato entendible */
     string getTransformedTime(int time)
     {
         int min, seg;
@@ -65,6 +68,7 @@ public class Timer2 : MonoBehaviour {
         string timer = min + ":" + seg;
         return timer;
     }
+    // Función de parpadeo del icono del reloj
     void FlashLabel()
     {
         if (flashing_Label.activeSelf)

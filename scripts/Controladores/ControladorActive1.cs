@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+// Controlador activo en el juego, el instanciado.
 public class ControladorActive1 : MonoBehaviour {
 
-    public static ControladorActive1 controlador;
+    public static ControladorActive1 controlador; // instancia al controlador
     public delegate void metodoDelegado();
-    public static event metodoDelegado DestroyAllZombies;
+    public static event metodoDelegado DestroyAllZombies; // método delegado que destruye todos los zombies
     private bool destroyAlls = false;
     public GameObject losePal;
     // Use this for initialization

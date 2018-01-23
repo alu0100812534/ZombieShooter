@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Controlador del mapa terreno
 public static class ControladorMapa2
 {
 

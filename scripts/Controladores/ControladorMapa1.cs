@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Controlador del mapa
 public static class ControladorMapa1{
 
     // Use this for initialization

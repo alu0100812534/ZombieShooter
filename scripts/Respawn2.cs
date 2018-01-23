@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// Clase que representa un punto de respawn en el mapa, además, actuará como controlador para los zombies asociados a este spawn
+// Clase que representa un punto de respawn en el mapa, además, actuará como controlador para los zombies asociados a este spawnç
+// MAPA 2 TERRENO
 public class Respawn2
 {
 
@@ -26,7 +27,7 @@ public class Respawn2
         setNumCriatures(num_criatures);
         List_zombies = new List<Zombie>();
     }
-    //Creamos y generamos los zombies, y los guardamos
+    //Creamos y generamos los zombies aleatoriamente dentro del rango del spawn, y los guardamos
     public void GenerateZombies()
     {
         for (int i = 0; i < num_criatures; i++)
@@ -46,6 +47,7 @@ public class Respawn2
         cube.transform.localScale = new Vector3(scalX, 70, scalZ);
         cube.GetComponent<Renderer>().material.color = Color.red;
     }
+    //getters && setters
     void setX(float x)
     {
         this.x = x;

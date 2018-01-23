@@ -45,6 +45,7 @@ public class Level1 : Levels{
     {
         base.setActivate(true); // activamos el temporizador para el nivel
     }
+    // generamos los objetos
     public void GenerateItems()
     {
         NucleBomb item_new = new NucleBomb(-26f, 1.5f);
@@ -54,6 +55,7 @@ public class Level1 : Levels{
         Kit kit2 = new Kit(-20f,-9.07f);
         Kit kit3 = new Kit(-28.39f, 2.82f);
     }
+    // creamos el personaje principal
     public override void CreatePj(){
 
 		//Los o el objeto del personaje ya esta puesto en el terreno, solo hay que posicionarlo donde queremos para tenerlo "visualizado"
@@ -73,5 +75,3 @@ public class Level1 : Levels{
 		list_items.Add(item_new);
 	}
 }
-
-//22.704            -0.178      0.331 = camera angule.

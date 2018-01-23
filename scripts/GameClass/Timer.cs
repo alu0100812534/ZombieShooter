@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Clase que representa al contador del juego
 public class Timer : MonoBehaviour {
 
-    public Text timerT;
+    public Text timerT; // texto del contador
     float timeLeft;
     private GameObject flashing_Label;
     public GameObject winPal;
@@ -17,10 +18,13 @@ public class Timer : MonoBehaviour {
     }
 	
 	// Update is called once per frame
+
 	void Update () {
+        // si no ha terminado el juego
         if (!ControladorMapa1.level.End)
         {
             timeLeft = ControladorMapa1.level.TEMPO_TIME;
+            // si el nivel ya e creo y el tiempo es positivo
             if (ControladorMapa1.level.getActivate() && timeLeft > 0)
             {
                 timeLeft = ControladorMapa1.level.TEMPO_TIME;
@@ -29,13 +33,15 @@ public class Timer : MonoBehaviour {
                 ControladorMapa1.level.TEMPO_TIME = ControladorMapa1.level.TEMPO_TIME - Time.deltaTime;
 
                 timerT.text = getTransformedTime((int)timeLeft);
+                // si termina el contador
                 if (timeLeft < 0)
                 {
                     timerT.text = "FIN";
                     //termina el nivel
                     winPal.SetActive(true); //cargamos pantalla de victoria
                 }
-
+                /* Si el tiempo es menor de 15 pero no ha terminado, parpadeamos el icono del temporizador,
+                 * cambiamos el color a rojo e incrementamos el número de zombies que generamos */
                 else if (timeLeft < 15 && timeLeft > 0)
                 {
                     InvokeRepeating("FlashLabel", 0, 1.5f);
@@ -51,12 +57,14 @@ public class Timer : MonoBehaviour {
                 float rando = Random.Range(0, 8000);
                 if ((int)rando < 5)
                 {
+                    // generamos mas zombies
                     for (int i = 0; i < ControladorMapa1.level.List_respawns.Count; i++)
                         ControladorMapa1.level.List_respawns[i].GenerateZombies();
                 }
             }
         }
     }
+    //función que formatea el tiempo que le pasamos a un formato entendible */
     string getTransformedTime(int time)
     {
         int min, seg;
@@ -65,6 +73,7 @@ public class Timer : MonoBehaviour {
         string timer = min + ":" + seg;
         return timer;
     }
+    // Función de parpadeo del icono del reloj
     void FlashLabel()
     {
         if (flashing_Label.activeSelf)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/* Clase que representa una UI, no la utilizo*/
 [System.Serializable]
 public class UII
 {

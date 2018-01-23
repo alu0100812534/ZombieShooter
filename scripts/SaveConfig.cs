@@ -6,7 +6,7 @@ using System.IO;
 
 static class Constants
 {
-	public const string ExtFile = "lolis"; // extensión de los ficheros de guardado 
+	public const string ExtFile = "zombie"; // extensión de los ficheros de guardado 
 }
 
 public static class SaveConfig {

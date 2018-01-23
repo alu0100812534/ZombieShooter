@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// clase que reprsenta una bomba nuclear
 public class NucleBomb{
     private Vector3 posittion;
     private GameObject item;

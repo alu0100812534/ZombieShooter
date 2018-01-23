@@ -15,6 +15,7 @@ public class Respawn{
 	private bool random = false; // si activamos random, el número de criaturas que se generen por oleada serán aleatorias
 	private List<Zombie> List_zombies; // lista de zombies asociados al respawn
 
+    // constructor
 	public Respawn (float x, float y, float z, float scalX, float scalZ, int num_criatures){
 		setX (x);
 		setY (y);
@@ -22,9 +23,9 @@ public class Respawn{
 		setWidth (scalX);
 		setHeight (scalZ);
 		setNumCriatures (num_criatures);
-		List_zombies = new List<Zombie> ();
+		List_zombies = new List<Zombie> (); // lista zombies
 	}
-	//Creamos y generamos los zombies, y los guardamos
+	//Creamos y generamos los zombies de forma aleatoria dentro del rango del spawn, y los guardamos
 	public void GenerateZombies(){
         	for (int i = 0; i < num_criatures; i++) {
 			float xI = Random.Range (x, x + (scalX - 0.5f));
@@ -39,6 +40,8 @@ public class Respawn{
 		cube.transform.localScale = new Vector3 (scalX, 70, scalZ);
 		cube.GetComponent<Renderer> ().material.color = Color.red;
 	}
+
+    // getters && setters
 	void setX(float x){
 		this.x = x;
 	}

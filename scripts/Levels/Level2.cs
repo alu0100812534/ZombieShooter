@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Level2 : Levels
 {
-
+    //coordenadas inicio
     private float COOR_START_X = 22.5f;
     private float COOR_START_Y = 160f;
     private float COOR_START_Z = -479.79f; //6.51
-    private int HEALTH = 3;
+    private int HEALTH = 3; //vidas inicio
     public float TEMPO_TIME = 1000f; //Constante con el tiempo del temporizador (no cambiarle el nombre a la constante!)
     public List<ItemM> list_items; // Lista con los objetos del nivel
 
-    // Constructor del nivel 1
+    // Constructor del nivel 1 del MAPA TERRENO
     public Level2()
     {
         BuildLevel();

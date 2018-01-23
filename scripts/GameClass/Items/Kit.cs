@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// clase que representa a un kit de vida 
 public class Kit
 {
     private Vector3 posittion;

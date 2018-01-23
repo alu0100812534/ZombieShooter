@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// clase que representa a un jugador
 [System.Serializable]
 public class Player
 {
-    public UII uii;
-    public string name;
-    public int health;
+    public UII uii; // variable estática al canvas, no la utilizo por ahora.
+    public string name; // nombre del jugador
+    public int health; // vida del jugador
     public Player() { }
     public Player(string name)
     {

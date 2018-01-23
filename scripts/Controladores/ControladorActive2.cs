@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+// controlador activo del MAPA TERRENO
 public class ControladorActive2 : MonoBehaviour
 {
 

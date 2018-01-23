@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Clase que retorna al ganar, al menu principal
 public class ReturnStart : MonoBehaviour
 {
 
     float time = 3F;
     public Text zombieT;
     public Text healthT;
-  
-
+   
     // Use this for initialization
     void Start()
     {

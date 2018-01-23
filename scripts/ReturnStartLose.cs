@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Clase que una vez que perdamos, nos retorna al menu principal
 public class ReturnStartLose : MonoBehaviour
 {
 

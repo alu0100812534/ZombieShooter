@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/* Este script hace que todo lo que se salga de los límites del mapa sea destruido */
+/* Este script hace que todo lo que se salga de los límites del mapa sea destruido al cabo de unos segundos. */
 public class DestroyByBoundary : MonoBehaviour {
 
     bool exit = false;
@@ -18,6 +18,7 @@ public class DestroyByBoundary : MonoBehaviour {
         {
             timeLeft = timeLeft - Time.deltaTime;
             timerT.text =  ((int)timeLeft).ToString();
+            //si el tiempo llega a 0, te quita los corazones y se acaba el juego.
             if (timeLeft < 0)
             {
                 ControladorMapa1.level.UpdateHealth(ControladorMapa1.level.Phealth, 2);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Clase 
 public class Levels {
 
 	protected int zombiesC = 0; //Zombies elimiandos
@@ -10,18 +11,21 @@ public class Levels {
 	protected float SCALE = 0.2f; // escala del personaje (tamaño)
 	public List<Respawn> List_respawns; // Lista que contendrá los spawns de los niveles
   protected bool activateT; // activar temporizador
-    public int Phealth;
-    public bool End;
+    public int Phealth; // vida actual del personaje
+    public bool End; // si es true, el juego ha terminado
 
+    //contadores internos de vida.
     private int x_health_ac;
     private int y_health_ac;
 
+    // coonstructor del nivel
     public Levels() {
 		List_respawns = new List<Respawn>();
        zombiesC = 0;
         setActivate(false);
         End = false;
     }
+    //métodos virtuales
 	public virtual void BuildLevel(){
 	}
     public virtual void BuildTimer()
@@ -29,6 +33,7 @@ public class Levels {
     }
     public virtual void CreatePj(){
 	}
+    //incrementa el contador de zombies
     public virtual void ZCInc()
     {
         zombiesC++;
@@ -43,6 +48,7 @@ public class Levels {
     * Si type = 2   ->  restará count al número de corazones actual 
     * Si type = 3   ->  se entiende que es el comienzo del nivel, por lo que pondrá count corazones en el panel */
 
+    //Función que añade o quita corazones de vida
     public virtual void UpdateHealth(int count , int type)
     {
 
@@ -51,6 +57,8 @@ public class Levels {
         {
             case 1:
                 {
+                    // añadimos corazones, por lo que instanciamos un objeto corazon dejandole un espacio entre ellos
+                    // además, se incrementa la variable Phealth con el contador de vida.
                     for (int i = 0; i < count; i++)
                     {
                         x_health_ac = x_health_ac + 36;
@@ -61,7 +69,8 @@ public class Levels {
                     }
                 }
             break;
-
+            // quitamos corazones, por lo que instanciamos un objeto corazon dejandole un espacio entre ellos
+            // además, se incrementa la variable Phealth con el contador de vida.
             case 2:
                 { 
                     Component[] imgs =  UI.GetComponentsInChildren(typeof(RawImage)); 
@@ -74,6 +83,8 @@ public class Levels {
                          }
                 }
             break;
+            // añadimos los corazones iniciales , por lo que instanciamos un objeto corazon dejandole un espacio entre ellos
+            // además, se incrementa la variable Phealth con el contador de vida.
             case 3:
                 {
                     // posición inicial del primer corazón

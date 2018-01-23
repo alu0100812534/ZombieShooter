@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// clase que representa un kit de vida en el juego
 public class KitObject : MonoBehaviour
 {
 
@@ -16,6 +16,7 @@ public class KitObject : MonoBehaviour
     {
         gameObject.transform.Rotate(0, 50 * Time.deltaTime, 0); // 50, velocidad de rotacion
     }
+    //si colisionamos con el jugador le añadimos 2 vidas
     void OnCollisionEnter(Collision collision)
     {
         GameObject player = GameObject.FindWithTag("soldier");

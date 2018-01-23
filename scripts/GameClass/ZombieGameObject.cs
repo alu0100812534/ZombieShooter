@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*Clase que representa el objeto zombie en el juego */
 public class ZombieGameObject : MonoBehaviour
 {
     public Transform target;
@@ -15,6 +16,7 @@ public class ZombieGameObject : MonoBehaviour
     bool deatht = false;
     bool attack = false;
     float wait = 2F;
+    // evento y delegado, que destruye todos los zombies.
     void Start()
     {
         ControladorActive1.DestroyAllZombies += DestroyZombie;
@@ -38,9 +40,10 @@ public class ZombieGameObject : MonoBehaviour
                 // Aqui movimiento del zombie 
                 this.transform.Translate(Vector3.forward * 0.3f * Time.deltaTime);
 
+                // Si el zombie esta a menos de 0.7 del jugador, activamos las animaciones de ataque.
                 if (distance < 0.7)
                 {
-
+                    // hacemos la animación y atacamos
                     gameObject.transform.GetChild(0).GetComponent<Animation>().Play("Zombie_Attack_01");
                     if (!attack)
                     {
@@ -58,6 +61,7 @@ public class ZombieGameObject : MonoBehaviour
                     }
 
                 }
+                // si está a una distancia entre 0.7 y 0.9 activamos la animación 
                 else if (distance > 0.7 && distance < 0.9)
                 {
                     gameObject.transform.GetChild(0).GetComponent<Animation>().Play("Zombie_Attack_01");
@@ -71,6 +75,7 @@ public class ZombieGameObject : MonoBehaviour
 
             }
         }
+        // si el zombiee está activado como "muerto" al cabo de 3 segundos los destruimos
         if (deatht)
         {
             timerDeath = timerDeath - Time.deltaTime;
@@ -97,7 +102,7 @@ public class ZombieGameObject : MonoBehaviour
         }
         
     }
-    
+    // clase alternativa
     public void DestroyZombie()
     {
         if (!deatht)

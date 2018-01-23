@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Clase que representa a un zombie */
 public class Zombie{
 
-	public Transform target;
+	public Transform target; // jugador player
 	public float velocidadDespzamiento = 2; 
 	private float velocidadRotacion = 4;
 	private bool stop = false;
-    private GameObject zombie;
+    private GameObject zombie; // objeto zombie 
  
   // Use this for initialization
     private float x;
 	private float z;
 
+    // constructor
 	public Zombie(float x, float z){
 		setX (x);
 		setZ (z);
+        //Instanciamos el zombie
 		Vector3 posittion = new Vector3(x,2.3F,z);
 		zombie = (GameObject)GameObject.Instantiate(Resources.Load("Zombie_01"), posittion, Quaternion.identity);
 	}
